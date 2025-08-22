@@ -8,5 +8,11 @@ public class ByLambdaExpresison {
         };
         Thread thread = new Thread(runnable);
         thread.start();
+        // join() not necessary to write here
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
